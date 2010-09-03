@@ -1,0 +1,58 @@
+NAME
+    Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
+
+VERSION
+    version 1.102460
+
+SYNOPSIS
+    In "weaver.ini":
+
+        [Availability]
+
+OVERVIEW
+    This section plugin will produce a hunk of Pod that refers the user to
+    the distribution's homepage and development versions.
+
+    You need to use Dist::Zilla::Plugin::Bugtracker and
+    Dist::Zilla::Plugin::Homepage in your "dist.ini" file, because this
+    plugin relies on information those other plugins generate.
+
+FUNCTIONS
+  weave_section
+    adds the "AVAILABILITY" section.
+
+INSTALLATION
+    See perlmodinstall for information and options on installing Perl
+    modules.
+
+BUGS AND LIMITATIONS
+    No bugs have been reported.
+
+    Please report any bugs or feature requests through the web interface at
+    <http://rt.cpan.org>.
+
+AVAILABILITY
+    The latest version of this module is available from the Comprehensive
+    Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
+    CPAN site near you, or see
+    <http://search.cpan.org/dist/Pod-Weaver-Section-Availability/>.
+
+    The development version lives at
+    <http://github.com/hanekomu/Pod-Weaver-Section-Availability> and may be
+    cloned from <git://github.com/hanekomu/Pod-Weaver-Section-Availability>.
+    Instead of sending patches, please fork this project using the standard
+    git and github infrastructure.
+
+AUTHORS
+    *   Marcel Gruenauer <marcel@cpan.org>
+
+    *   Nigel Metheringham <nigelm@cpan.org>
+
+    *   Mark Gardner <mjgardner@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2010 by Marcel Gruenauer.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
