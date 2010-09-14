@@ -4,7 +4,7 @@ use warnings;
 
 package Pod::Weaver::Section::Availability;
 BEGIN {
-  $Pod::Weaver::Section::Availability::VERSION = '1.102460';
+  $Pod::Weaver::Section::Availability::VERSION = '1.102570';
 }
 
 # ABSTRACT: Add an AVAILABILITY pod section
@@ -16,21 +16,25 @@ use Moose::Autobox;
 # add a set of attributes to hold the repo information
 has zilla =>
   (is => 'rw', isa => 'Dist::Zilla', handles => [ 'name', 'distmeta' ]);
-has [qw(homepage_url cpan_url repo_type repo_url repo_web)] =>
+has [qw(homepage_url cpan_url repo_type repo_url)] =>
   (is => 'rw', isa => 'Str', lazy_build => 1);
+has repo_web => (is => 'rw', lazy_build => 1);
 has is_github => (is => 'rw', isa => 'Bool', lazy_build => 1);
 
 sub weave_section {
     my ($self, $document, $input) = @_;
     $self->zilla($input->{zilla});
+    my @pod = ($self->_homepage_pod, $self->_cpan_pod);
+
+    # Non-github repos may not have a repo web URL
+    if ($self->repo_web) {
+        push @pod, $self->_development_pod;
+    }
     $document->children->push(
         Pod::Elemental::Element::Nested->new(
             {   command  => 'head1',
                 content  => 'AVAILABILITY',
-                children => [
-                    $self->_homepage_pod, $self->_cpan_pod,
-                    $self->_development_pod,
-                ],
+                children => \@pod,
             }
         ),
     );
@@ -141,7 +145,7 @@ Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 =head1 VERSION
 
-version 1.102460
+version 1.102570
 
 =head1 SYNOPSIS
 

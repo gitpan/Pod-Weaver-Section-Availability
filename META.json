@@ -6,7 +6,7 @@
       "Mark Gardner <mjgardner@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670",
+   "generated_by" : "Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -46,7 +46,7 @@
    "provides" : {
       "Pod::Weaver::Section::Availability" : {
          "file" : "lib/Pod/Weaver/Section/Availability.pm",
-         "version" : "1.102460"
+         "version" : "1.102570"
       }
    },
    "release_status" : "stable",
@@ -60,6 +60,6 @@
          "url" : "http://github.com/hanekomu/Pod-Weaver-Section-Availability"
       }
    },
-   "version" : "1.102460"
+   "version" : "1.102570"
 }
 

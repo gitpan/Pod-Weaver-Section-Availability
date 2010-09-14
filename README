@@ -2,7 +2,7 @@ NAME
     Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 VERSION
-    version 1.102460
+    version 1.102570
 
 SYNOPSIS
     In "weaver.ini":
