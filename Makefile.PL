@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.31;
 
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'Add an AVAILABILITY pod section',
-  'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>, Nigel Metheringham <nigelm@cpan.org>, Mark Gardner <mjgardner@cpan.org>',
+  'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>, Nigel Metheringham <nigelm@cpan.org>, Mark Gardner <mjgardner@cpan.org>, Mike Doherty <doherty@cpan.org>',
   'BUILD_REQUIRES' => {
     'Carp' => '0',
     'English' => '0',
@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     'Pod::Weaver::Role::Section' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '1.102570',
+  'VERSION' => '1.110090',
   'test' => {
     'TESTS' => 't/*.t'
   }

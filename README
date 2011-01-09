@@ -2,7 +2,7 @@ NAME
     Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 VERSION
-    version 1.102570
+    version 1.110090
 
 SYNOPSIS
     In "weaver.ini":
@@ -17,9 +17,9 @@ OVERVIEW
     Dist::Zilla::Plugin::Homepage in your "dist.ini" file, because this
     plugin relies on information those other plugins generate.
 
-FUNCTIONS
+METHODS
   weave_section
-    adds the "AVAILABILITY" section.
+    Adds the "AVAILABILITY" section.
 
 INSTALLATION
     See perlmodinstall for information and options on installing Perl
@@ -29,7 +29,8 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Ava
+    ilability>.
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
@@ -38,10 +39,11 @@ AVAILABILITY
     <http://search.cpan.org/dist/Pod-Weaver-Section-Availability/>.
 
     The development version lives at
-    <http://github.com/hanekomu/Pod-Weaver-Section-Availability> and may be
-    cloned from <git://github.com/hanekomu/Pod-Weaver-Section-Availability>.
-    Instead of sending patches, please fork this project using the standard
-    git and github infrastructure.
+    <http://github.com/hanekomu/Pod-Weaver-Section-Availability.git> and may
+    be cloned from
+    <git://github.com/hanekomu/Pod-Weaver-Section-Availability.git>. Instead
+    of sending patches, please fork this project using the standard git and
+    github infrastructure.
 
 AUTHORS
     *   Marcel Gruenauer <marcel@cpan.org>
@@ -49,6 +51,8 @@ AUTHORS
     *   Nigel Metheringham <nigelm@cpan.org>
 
     *   Mark Gardner <mjgardner@cpan.org>
+
+    *   Mike Doherty <doherty@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by Marcel Gruenauer.

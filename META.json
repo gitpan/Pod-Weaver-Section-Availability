@@ -3,10 +3,11 @@
    "author" : [
       "Marcel Gruenauer <marcel@cpan.org>",
       "Nigel Metheringham <nigelm@cpan.org>",
-      "Mark Gardner <mjgardner@cpan.org>"
+      "Mark Gardner <mjgardner@cpan.org>",
+      "Mike Doherty <doherty@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -46,7 +47,7 @@
    "provides" : {
       "Pod::Weaver::Section::Availability" : {
          "file" : "lib/Pod/Weaver/Section/Availability.pm",
-         "version" : "1.102570"
+         "version" : "1.110090"
       }
    },
    "release_status" : "stable",
@@ -57,9 +58,11 @@
       },
       "homepage" : "http://search.cpan.org/dist/Pod-Weaver-Section-Availability/",
       "repository" : {
-         "url" : "http://github.com/hanekomu/Pod-Weaver-Section-Availability"
+         "type" : "git",
+         "url" : "git://github.com/hanekomu/Pod-Weaver-Section-Availability.git",
+         "web" : "http://github.com/hanekomu/Pod-Weaver-Section-Availability"
       }
    },
-   "version" : "1.102570"
+   "version" : "1.110090"
 }
 

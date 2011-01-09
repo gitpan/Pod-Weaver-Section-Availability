@@ -4,6 +4,7 @@ author:
   - 'Marcel Gruenauer <marcel@cpan.org>'
   - 'Nigel Metheringham <nigelm@cpan.org>'
   - 'Mark Gardner <mjgardner@cpan.org>'
+  - 'Mike Doherty <doherty@cpan.org>'
 build_requires:
   Carp: 0
   English: 0
@@ -14,7 +15,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.102400'
+generated_by: 'Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,7 +24,7 @@ name: Pod-Weaver-Section-Availability
 provides:
   Pod::Weaver::Section::Availability:
     file: lib/Pod/Weaver/Section/Availability.pm
-    version: 1.102570
+    version: 1.110090
 requires:
   Dist::Zilla::Plugin::Bugtracker: 0
   Dist::Zilla::Plugin::Homepage: 0
@@ -35,5 +36,5 @@ requires:
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Availability
   homepage: http://search.cpan.org/dist/Pod-Weaver-Section-Availability/
-  repository: http://github.com/hanekomu/Pod-Weaver-Section-Availability
-version: 1.102570
+  repository: git://github.com/hanekomu/Pod-Weaver-Section-Availability.git
+version: 1.110090

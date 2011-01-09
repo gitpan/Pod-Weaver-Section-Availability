@@ -1,5 +1,9 @@
 Revision history for Perl extension Pod-Weaver-Section-Availability
 
+1.110090  2011-01-09 12:40:12 Europe/Vienna
+    - fix the github repo's web URL as used in the availability section text
+      (Mike Doherty)
+
 1.102570  2010-09-14 16:49:38 Europe/Vienna
     - repo_web is optional; we can only determine the URL for github repos. If
       undef, we don't include the relevant POD.

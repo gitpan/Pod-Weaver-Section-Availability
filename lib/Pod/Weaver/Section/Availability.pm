@@ -4,7 +4,7 @@ use warnings;
 
 package Pod::Weaver::Section::Availability;
 BEGIN {
-  $Pod::Weaver::Section::Availability::VERSION = '1.102570';
+  $Pod::Weaver::Section::Availability::VERSION = '1.110090';
 }
 
 # ABSTRACT: Add an AVAILABILITY pod section
@@ -81,9 +81,10 @@ sub _build_repo_data {
 
         # strip the access method off - we can then add it as needed
         my $nomethod = $repourl;
-        $nomethod =~ s!^(http|git|git\@github\.com):/*!!i;
-        $repourl = 'git://' . $nomethod;
-        $repoweb = 'http://' . $nomethod;
+        $nomethod =~ s{^(http|git|git\@github\.com):/*}{}i;
+        $nomethod =~ s{\.git$}{}i;
+        $repourl = "git://$nomethod.git";
+        $repoweb = "http://$nomethod";
     }
     return ($repourl, $repoweb);
 }
@@ -145,7 +146,7 @@ Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 =head1 VERSION
 
-version 1.102570
+version 1.110090
 
 =head1 SYNOPSIS
 
@@ -162,11 +163,11 @@ You need to use L<Dist::Zilla::Plugin::Bugtracker> and
 L<Dist::Zilla::Plugin::Homepage> in your C<dist.ini> file, because
 this plugin relies on information those other plugins generate.
 
-=head1 FUNCTIONS
+=head1 METHODS
 
 =head2 weave_section
 
-adds the C<AVAILABILITY> section.
+Adds the C<AVAILABILITY> section.
 
 =head1 INSTALLATION
 
@@ -177,7 +178,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Availability>.
 
 =head1 AVAILABILITY
 
@@ -185,8 +186,8 @@ The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
 site near you, or see L<http://search.cpan.org/dist/Pod-Weaver-Section-Availability/>.
 
-The development version lives at L<http://github.com/hanekomu/Pod-Weaver-Section-Availability>
-and may be cloned from L<git://github.com/hanekomu/Pod-Weaver-Section-Availability>.
+The development version lives at L<http://github.com/hanekomu/Pod-Weaver-Section-Availability.git>
+and may be cloned from L<git://github.com/hanekomu/Pod-Weaver-Section-Availability.git>.
 Instead of sending patches, please fork this project using the standard
 git and github infrastructure.
 
@@ -205,6 +206,10 @@ Nigel Metheringham <nigelm@cpan.org>
 =item *
 
 Mark Gardner <mjgardner@cpan.org>
+
+=item *
+
+Mike Doherty <doherty@cpan.org>
 
 =back
 
