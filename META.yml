@@ -24,7 +24,7 @@ name: Pod-Weaver-Section-Availability
 provides:
   Pod::Weaver::Section::Availability:
     file: lib/Pod/Weaver/Section/Availability.pm
-    version: 1.110090
+    version: 1.110091
 requires:
   Dist::Zilla::Plugin::Bugtracker: 0
   Dist::Zilla::Plugin::Homepage: 0
@@ -37,4 +37,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Availability
   homepage: http://search.cpan.org/dist/Pod-Weaver-Section-Availability/
   repository: git://github.com/hanekomu/Pod-Weaver-Section-Availability.git
-version: 1.110090
+version: 1.110091

@@ -47,7 +47,7 @@
    "provides" : {
       "Pod::Weaver::Section::Availability" : {
          "file" : "lib/Pod/Weaver/Section/Availability.pm",
-         "version" : "1.110090"
+         "version" : "1.110091"
       }
    },
    "release_status" : "stable",
@@ -63,6 +63,6 @@
          "web" : "http://github.com/hanekomu/Pod-Weaver-Section-Availability"
       }
    },
-   "version" : "1.110090"
+   "version" : "1.110091"
 }
 

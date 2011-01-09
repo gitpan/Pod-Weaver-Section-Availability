@@ -4,7 +4,7 @@ use warnings;
 
 package Pod::Weaver::Section::Availability;
 BEGIN {
-  $Pod::Weaver::Section::Availability::VERSION = '1.110090';
+  $Pod::Weaver::Section::Availability::VERSION = '1.110091';
 }
 
 # ABSTRACT: Add an AVAILABILITY pod section
@@ -146,7 +146,7 @@ Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 =head1 VERSION
 
-version 1.110090
+version 1.110091
 
 =head1 SYNOPSIS
 
@@ -186,7 +186,7 @@ The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
 site near you, or see L<http://search.cpan.org/dist/Pod-Weaver-Section-Availability/>.
 
-The development version lives at L<http://github.com/hanekomu/Pod-Weaver-Section-Availability.git>
+The development version lives at L<http://github.com/hanekomu/Pod-Weaver-Section-Availability>
 and may be cloned from L<git://github.com/hanekomu/Pod-Weaver-Section-Availability.git>.
 Instead of sending patches, please fork this project using the standard
 git and github infrastructure.
