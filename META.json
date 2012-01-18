@@ -57,13 +57,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {},
-      "homepage" : "http://p3rl.org/Pod::Weaver::Section::Availability",
+      "homepage" : "http://metacpan.org/release/Pod-Weaver-Section-Availability/",
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/doherty/Pod-Weaver-Section-Availability.git",
          "web" : "https://github.com/doherty/Pod-Weaver-Section-Availability"
       }
    },
-   "version" : "1.102571"
+   "version" : "1.20"
 }
 

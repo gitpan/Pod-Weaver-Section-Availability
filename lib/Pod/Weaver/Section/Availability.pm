@@ -4,7 +4,7 @@ use warnings;
 
 package Pod::Weaver::Section::Availability;
 # ABSTRACT: Add an AVAILABILITY pod section
-our $VERSION = '1.102571'; # VERSION
+our $VERSION = '1.20'; # VERSION
 use Moose;
 with 'Pod::Weaver::Role::Section';
 
@@ -166,7 +166,7 @@ Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 =head1 VERSION
 
-version 1.102571
+version 1.20
 
 =head1 SYNOPSIS
 
@@ -194,7 +194,7 @@ __END__
 
 =head1 AVAILABILITY
 
-The project homepage is L<http://p3rl.org/Pod::Weaver::Section::Availability>.
+The project homepage is L<http://metacpan.org/release/Pod-Weaver-Section-Availability/>.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN

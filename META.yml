@@ -34,6 +34,6 @@ requires:
   strict: 0
   warnings: 0
 resources:
-  homepage: http://p3rl.org/Pod::Weaver::Section::Availability
+  homepage: http://metacpan.org/release/Pod-Weaver-Section-Availability/
   repository: git://github.com/doherty/Pod-Weaver-Section-Availability.git
-version: 1.102571
+version: 1.20
