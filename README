@@ -2,7 +2,7 @@ NAME
     Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 VERSION
-    version 1.110091
+    version 1.102571
 
 SYNOPSIS
     In "weaver.ini":
@@ -21,29 +21,26 @@ METHODS
   weave_section
     Adds the "AVAILABILITY" section.
 
-INSTALLATION
-    See perlmodinstall for information and options on installing Perl
-    modules.
+AVAILABILITY
+    The project homepage is
+    <http://p3rl.org/Pod::Weaver::Section::Availability>.
+
+    The latest version of this module is available from the Comprehensive
+    Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
+    CPAN site near you, or see
+    <https://metacpan.org/module/Pod::Weaver::Section::Availability/>.
+
+SOURCE
+    The development version is on github at
+    <http://github.com/doherty/Pod-Weaver-Section-Availability> and may be
+    cloned from
+    <git://github.com/doherty/Pod-Weaver-Section-Availability.git>
 
 BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Ava
-    ilability>.
-
-AVAILABILITY
-    The latest version of this module is available from the Comprehensive
-    Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
-    CPAN site near you, or see
-    <http://search.cpan.org/dist/Pod-Weaver-Section-Availability/>.
-
-    The development version lives at
-    <http://github.com/hanekomu/Pod-Weaver-Section-Availability> and may be
-    cloned from
-    <git://github.com/hanekomu/Pod-Weaver-Section-Availability.git>. Instead
-    of sending patches, please fork this project using the standard git and
-    github infrastructure.
+    <http://rt.cpan.org>.
 
 AUTHORS
     *   Marcel Gruenauer <marcel@cpan.org>
@@ -55,7 +52,7 @@ AUTHORS
     *   Mike Doherty <doherty@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2010 by Marcel Gruenauer.
+    This software is copyright (c) 2010 by Mike Doherty.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

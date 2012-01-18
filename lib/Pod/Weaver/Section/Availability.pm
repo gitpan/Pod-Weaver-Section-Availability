@@ -3,23 +3,37 @@ use strict;
 use warnings;
 
 package Pod::Weaver::Section::Availability;
-BEGIN {
-  $Pod::Weaver::Section::Availability::VERSION = '1.110091';
-}
-
 # ABSTRACT: Add an AVAILABILITY pod section
+our $VERSION = '1.102571'; # VERSION
 use Moose;
 with 'Pod::Weaver::Role::Section';
+
 use namespace::autoclean;
 use Moose::Autobox;
 
+
 # add a set of attributes to hold the repo information
-has zilla =>
-  (is => 'rw', isa => 'Dist::Zilla', handles => [ 'name', 'distmeta' ]);
-has [qw(homepage_url cpan_url repo_type repo_url)] =>
-  (is => 'rw', isa => 'Str', lazy_build => 1);
-has repo_web => (is => 'rw', lazy_build => 1);
-has is_github => (is => 'rw', isa => 'Bool', lazy_build => 1);
+has zilla => (
+    is => 'rw',
+    isa => 'Dist::Zilla',
+    handles => ['distmeta'],
+);
+
+has [qw(homepage_url cpan_url repo_type repo_url name)] => (
+    is => 'rw',
+    isa => 'Str',
+    lazy_build => 1
+);
+has repo_web => (
+    is => 'rw',
+    lazy_build => 1
+);
+has is_github => (
+    is => 'rw',
+    isa => 'Bool',
+    lazy_build => 1
+);
+
 
 sub weave_section {
     my ($self, $document, $input) = @_;
@@ -40,14 +54,20 @@ sub weave_section {
     );
 }
 
+sub _build_name {
+    my $name = shift->zilla->name;
+    $name =~ s/-/::/g;
+    return $name;
+}
+
 sub _build_homepage_url {
     my $self = shift;
     $self->distmeta->{resources}{homepage}
-      || sprintf 'http://search.cpan.org/dist/%s/', $self->name;
+      || sprintf 'https://metacpan.org/module/%s/', $self->name;
 }
 
 sub _build_cpan_url {
-    sprintf 'http://search.cpan.org/dist/%s/', shift->name;
+    sprintf 'https://metacpan.org/module/%s/', shift->name;
 }
 
 # if we don't know we default to git...
@@ -68,14 +88,13 @@ sub _build_is_github {
 
     # we do this by looking at the URL for githubbyness
     my $repourl = $self->distmeta->{resources}{repository}{url}
-      or die "No repository URL set in distmeta";
+      or return;
     $repourl =~ m|/github.com/|;
 }
 
 sub _build_repo_data {
     my $self    = shift;
-    my $repourl = $self->distmeta->{resources}{repository}{url}
-      or die "No repository URL set in distmeta";
+    my $repourl = $self->distmeta->{resources}{repository}{url};
     my $repoweb;
     if ($self->is_github) {
 
@@ -96,11 +115,9 @@ sub _homepage_pod {
     return if $self->cpan_url eq $self->homepage_url;
 
     # otherwise return some boilerplate
-    Pod::Elemental::Element::Pod5::Ordinary->new(
-        {   content => sprintf 'The project homepage is L<%s>.',
-            $self->homepage_url
-        }
-    );
+    Pod::Elemental::Element::Pod5::Ordinary->new({
+        content => sprintf 'The project homepage is L<%s>.', $self->homepage_url
+    });
 }
 
 sub _cpan_pod {
@@ -117,28 +134,31 @@ sub _cpan_pod {
 sub _development_pod {
     my $self = shift;
     my $text;
-    if ($self->is_github) {
-        $text = sprintf "The development version lives at L<%s>\n",
-          $self->repo_web;
-        $text .= sprintf "and may be cloned from L<%s>.\n", $self->repo_url;
-        $text .=
-"Instead of sending patches, please fork this project using the standard\n";
-        $text .= "git and github infrastructure.\n";
-    } else {
-        $text =
-          sprintf "The development version lives in a %s repository at L<%s>\n",
-          $self->repo_type, $self->repo_web;
-    }
-    Pod::Elemental::Element::Pod5::Ordinary->new({ content => $text });
-}
-1;
 
+    if ($self->is_github) {
+        $text = sprintf <<'END_TEXT', $self->repo_web, $self->repo_url;
+The development version lives at L<%s>
+and may be cloned from L<%s>.
+Instead of sending patches, please fork this project using the standard
+git and github infrastructure.
+END_TEXT
+    }
+    elsif ($self->repo_type and $self->repo_web) {
+        $text =
+            sprintf "The development version lives in a %s repository at L<%s>\n",
+            $self->repo_type, $self->repo_web;
+    }
+
+    Pod::Elemental::Element::Pod5::Ordinary->new({ content => $text }) if $text;
+    return;
+}
+
+1;
 
 __END__
 =pod
 
-=for test_synopsis 1;
-__END__
+=encoding utf-8
 
 =head1 NAME
 
@@ -146,7 +166,7 @@ Pod::Weaver::Section::Availability - Add an AVAILABILITY pod section
 
 =head1 VERSION
 
-version 1.110091
+version 1.102571
 
 =head1 SYNOPSIS
 
@@ -169,27 +189,28 @@ this plugin relies on information those other plugins generate.
 
 Adds the C<AVAILABILITY> section.
 
-=head1 INSTALLATION
+=for test_synopsis 1;
+__END__
 
-See perlmodinstall for information and options on installing Perl modules.
+=head1 AVAILABILITY
+
+The project homepage is L<http://p3rl.org/Pod::Weaver::Section::Availability>.
+
+The latest version of this module is available from the Comprehensive Perl
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you, or see L<https://metacpan.org/module/Pod::Weaver::Section::Availability/>.
+
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/doherty/Pod-Weaver-Section-Availability>
+and may be cloned from L<git://github.com/doherty/Pod-Weaver-Section-Availability.git>
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Availability>.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see L<http://search.cpan.org/dist/Pod-Weaver-Section-Availability/>.
-
-The development version lives at L<http://github.com/hanekomu/Pod-Weaver-Section-Availability>
-and may be cloned from L<git://github.com/hanekomu/Pod-Weaver-Section-Availability.git>.
-Instead of sending patches, please fork this project using the standard
-git and github infrastructure.
+L<http://rt.cpan.org>.
 
 =head1 AUTHORS
 
@@ -215,7 +236,7 @@ Mike Doherty <doherty@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Marcel Gruenauer.
+This software is copyright (c) 2010 by Mike Doherty.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

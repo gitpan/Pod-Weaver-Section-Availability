@@ -2,41 +2,42 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.008; }
+use 5.008;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Add an AVAILABILITY pod section',
-  'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>, Nigel Metheringham <nigelm@cpan.org>, Mark Gardner <mjgardner@cpan.org>, Mike Doherty <doherty@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Carp' => '0',
-    'English' => '0',
-    'File::Find' => '0',
-    'File::Temp' => '0',
-    'Scalar::Util' => '0',
-    'Test::More' => '0.94'
+  "ABSTRACT" => "Add an AVAILABILITY pod section",
+  "AUTHOR" => "Marcel Gruenauer <marcel\@cpan.org>, Nigel Metheringham <nigelm\@cpan.org>, Mark Gardner <mjgardner\@cpan.org>, Mike Doherty <doherty\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Module::Build" => "0.3601",
+    "Test::More" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30",
+    "Module::Build" => "0.3601"
   },
-  'DISTNAME' => 'Pod-Weaver-Section-Availability',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Pod::Weaver::Section::Availability',
-  'PREREQ_PM' => {
-    'Dist::Zilla::Plugin::Bugtracker' => '0',
-    'Dist::Zilla::Plugin::Homepage' => '0',
-    'Moose' => '0',
-    'Moose::Autobox' => '0',
-    'Pod::Weaver::Role::Section' => '0',
-    'namespace::autoclean' => '0'
+  "DISTNAME" => "Pod-Weaver-Section-Availability",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Pod::Weaver::Section::Availability",
+  "PREREQ_PM" => {
+    "Dist::Zilla::Plugin::Bugtracker" => 0,
+    "Dist::Zilla::Plugin::Homepage" => 0,
+    "Moose" => 0,
+    "Moose::Autobox" => 0,
+    "Pod::Weaver::Role::Section" => 0,
+    "namespace::autoclean" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '1.110091',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "1.102571",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

@@ -7,7 +7,7 @@
       "Mike Doherty <doherty@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
    "license" : [
       "perl_5"
    ],
@@ -16,10 +16,21 @@
       "version" : "2"
    },
    "name" : "Pod-Weaver-Section-Availability",
+   "no_index" : {
+      "directory" : [
+         "corpus"
+      ]
+   },
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.30",
+            "Module::Build" : "0.3601"
          }
       },
       "runtime" : {
@@ -30,39 +41,29 @@
             "Moose::Autobox" : 0,
             "Pod::Weaver::Role::Section" : 0,
             "namespace::autoclean" : 0,
-            "perl" : "5.008"
+            "perl" : "5.008",
+            "strict" : 0,
+            "warnings" : 0
          }
       },
       "test" : {
          "requires" : {
-            "Carp" : 0,
-            "English" : 0,
             "File::Find" : 0,
             "File::Temp" : 0,
-            "Scalar::Util" : 0,
-            "Test::More" : "0.94"
+            "Test::More" : 0
          }
-      }
-   },
-   "provides" : {
-      "Pod::Weaver::Section::Availability" : {
-         "file" : "lib/Pod/Weaver/Section/Availability.pm",
-         "version" : "1.110091"
       }
    },
    "release_status" : "stable",
    "resources" : {
-      "bugtracker" : {
-         "mailto" : "bug-pod-weaver-section-availability at rt.cpan.org",
-         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Pod-Weaver-Section-Availability"
-      },
-      "homepage" : "http://search.cpan.org/dist/Pod-Weaver-Section-Availability/",
+      "bugtracker" : {},
+      "homepage" : "http://p3rl.org/Pod::Weaver::Section::Availability",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/hanekomu/Pod-Weaver-Section-Availability.git",
-         "web" : "http://github.com/hanekomu/Pod-Weaver-Section-Availability"
+         "url" : "git://github.com/doherty/Pod-Weaver-Section-Availability.git",
+         "web" : "https://github.com/doherty/Pod-Weaver-Section-Availability"
       }
    },
-   "version" : "1.110091"
+   "version" : "1.102571"
 }
 
